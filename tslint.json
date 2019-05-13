@@ -1,0 +1,24 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "trailing-comma": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "curly": [true, "ignore-same-line"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "member-ordering": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false,
+    "jsx-no-lambda": false,
+    "interface-over-type-literal": false,
+    "prettier": true
+  },
+  "jsRules": {
+    "trailing-comma": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false
+  }
+}

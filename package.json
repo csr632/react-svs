@@ -1,0 +1,30 @@
+{
+  "name": "react-svs",
+  "version": "1.0.0",
+  "description": "A light-weight, type-safe state management tool for React.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npx del ./lib && tsc"
+  },
+  "keywords": [
+    "react",
+    "state",
+    "state management"
+  ],
+  "author": "https://github.com/csr632",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.8.17",
+    "del-cli": "^1.1.0",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.5"
+  }
+}
