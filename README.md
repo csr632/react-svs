@@ -1,15 +1,17 @@
-# React-Svs
+# react-svs
 
-React-Svs is a light-weight, type-safe state management tool for React. It is designed to achieve three goals:
+Homepages of this package: [github](https://github.com/csr632/react-svs) and [npm](https://www.npmjs.com/package/react-svs).
+
+react-svs is a light-weight, type-safe state management tool for React. It is designed to achieve three goals:
 
 1. **Share** state within a subtree of React components.
 2. **Update** the shared state with predefined routines. Every React components within the subtree can call the update routines.
-3. **Fully utilize Typescript**. When you are accessing the shared state, or calling the update routines, React-Svs will infer all the type info for you, so you can benefit from all the Typescript magic like intelliSense, type-checking and jump-to-definition.
+3. **Fully utilize Typescript**. When you are accessing the shared state, or calling the update routines, react-svs will infer all the type info for you, so you can benefit from all the Typescript magic like intelliSense, type-checking and jump-to-definition.
    > The type inference is achieved mostly with these Typescript feature: [mapped types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types), [type inference in conditional types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-inference-in-conditional-types).
 
 ## Demonstration
 
-If you use React-Svs and Typescript, you can call state-updating routines in a type-safe manner. You can benefit from all the Typescript magic like intelliSense, type-checking and jump-to-definition:
+If you use react-svs and Typescript, you can call state-updating routines in a type-safe manner. You can benefit from all the Typescript magic like intelliSense, type-checking and jump-to-definition:
 ![](./doc/demo1.gif)
 ![](./doc/demo2.gif)
 You can refactor state-related code more easily and safely:
@@ -22,13 +24,13 @@ You can obtain data from shared state without worrying about typo in property na
 - Most React App need to share state between components. Passing state through props([Prop Drilling](https://hackernoon.com/lessons-learned-common-react-code-smells-and-how-to-avoid-them-f253eb9696a4#e988)) dosen't scale well.
   ![Prop Drilling](./doc/prop_drilling.png)
   React 16.3.0 introduce new a Context API that allow a component to 'broadcast' data to it's component subtree.
-  > React-Svs is implemented with [React Context API](https://reactjs.org/docs/context.html). That's why **every shared state is scoped within a React component subtree**.
+  > react-svs is implemented with [React Context API](https://reactjs.org/docs/context.html). That's why **every shared state is scoped within a React component subtree**.
 - Redux introduces many constraints and complexity into a project. This is a trade-off to make code behaviour clear in large projects. But for middle-size and fast-iterate projects, this may be unnecessary. Read [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367).
 - Most state management tools don't utilize type info. The binding between **update call** and **update implementation** is determined during **runtime**. For example, when you emit the **update call**:`store.dispatch({ type: 'INCREMENT' })`, although you can easily know it will execute the `INCREMENT` part of the reducer(**update implementation**), IDE(typescript language server) can't learn about this without actually **executing** the code, because the update call and the update implementation is connected by a string(runtime value). So Typescript can't provide you with code completion and type-checking for the payload of `INCREMENT` action.
 
 ## Concepts
 
-React-Svs is implemented with [React Context API](https://reactjs.org/docs/context.html). That's why **every shared state is scoped within a React component subtree**.
+react-svs is implemented with [React Context API](https://reactjs.org/docs/context.html). That's why **every shared state is scoped within a React component subtree**.
 
 ### State provider
 
@@ -52,7 +54,7 @@ Provider and Service are **one-to-one**: One Provider component instance provide
 
 ## How to use
 
-Generally, to use React-Svs, you need to:
+Generally, to use react-svs, you need to:
 
 1. `npm install --save react-svs`
 
@@ -108,7 +110,7 @@ Generally, to use React-Svs, you need to:
 
    Notice two things:
 
-   1. You define a class for service, which contains state-updating routines. React-Svs will instantiate this class when a provider component is created, and bind these two objects.
+   1. You define a class for service, which contains state-updating routines. react-svs will instantiate this class when a provider component is created, and bind these two objects.
 
    2. Call `ServiceMixin(ServiceClass)`.
 
@@ -190,7 +192,7 @@ type ServiceBase = (
 
 #### initialState
 
-This parameter is used to init the Provider component's state. Also, this parameter decides the type of state. React-Svs will use this type info to infer the type of many value.
+This parameter is used to init the Provider component's state. Also, this parameter decides the type of state. react-svs will use this type info to infer the type of many value.
 
 When defining the service class, you can use `this.providerState` to get the current state of Provider and you can use `this.setProviderState` to update the state. The usage of `this.setProviderState` is same as [setState](https://reactjs.org/docs/react-component.html#setstate) of normal React component.
 
@@ -210,7 +212,7 @@ When defining the service class, you can use `this.subscribedData` to get the co
 
 Like any other normal React component, a Provider can communicate with it's parent through props. When defining the service class, you can use `this.providerProps` to get the props that the Provider component received.
 
-This parameter define the default props of Provider if its parent didn't pass props to it. Also, this parameter decides the type of Provider's props. React-Svs will use this type info to infer the type of many value.
+This parameter define the default props of Provider if its parent didn't pass props to it. Also, this parameter decides the type of Provider's props. react-svs will use this type info to infer the type of many value.
 
 ### ServiceMixin
 
