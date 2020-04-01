@@ -1,3 +1,5 @@
+**This repo is deprecated, please checkout the cleaner solution: [react-hook-svs](https://github.com/csr632/react-hook-svs).**
+
 # react-svs
 
 Homepages of this package: [github](https://github.com/csr632/react-svs) and [npm](https://www.npmjs.com/package/react-svs).
